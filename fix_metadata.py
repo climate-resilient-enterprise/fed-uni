@@ -4,6 +4,7 @@ import argparse
 
 import numpy as np
 import xarray as xr
+import cmdline_provenance as cmdprov
 
 
 def main(args):
@@ -31,6 +32,7 @@ def main(args):
         'long_name': 'Longitude',
         'standard_name': 'longitude'
     }
+    ds.attrs['history'] = cmdprov.new_log()
     ds.to_netcdf(args.outfile, unlimited_dims='time')
 
 
