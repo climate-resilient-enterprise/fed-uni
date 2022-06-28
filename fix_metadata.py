@@ -31,7 +31,7 @@ def main(args):
         'long_name': 'Longitude',
         'standard_name': 'longitude'
     }
-    ds.to_netcdf(args.outfile)
+    ds.to_netcdf(args.outfile, unlimited_dims='time')
 
 
 if __name__ == '__main__':
