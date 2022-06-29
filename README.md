@@ -7,6 +7,7 @@ Code to process data from our partnership with Federation University.
 The FFDI files (as associated variables) from Federation Uni have a number of issues with file metadata:
 - The time axis is called `date` and the values are date strings
 - The latitude and longitude coordinates have no attributes (e.g. units, long name, standard name etc)
+- The latitude axis goes from north to south instead of the other way around
 
 The `fix_metadata.py` command line script fixes those issues.
 It takes a Fed Uni file name and an output file name as inputs.

@@ -15,6 +15,7 @@ def main(args):
     time_values = time_values.astype('datetime64[ns]')
     ds = ds.rename({'date': 'time', 'latitude': 'lat', 'longitude': 'lon'})
     ds = ds.assign_coords({'time': time_values})
+    ds = ds.reindex(lat=ds.lat[::-1])
     ds['time'].attrs = {
         'axis': 'T',
         'long_name': 'time',
